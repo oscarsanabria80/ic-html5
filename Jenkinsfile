@@ -3,7 +3,7 @@ pipeline {
         TOKEN = credentials('SURGE_TOKEN')
       }
     agent {
-        docker { image 'debian'
+        docker { image 'node'
         args '-u root:root'
         }
     }
@@ -15,12 +15,7 @@ pipeline {
         }
 
 
-        stage('Install npm')
-        {
-            steps {
-                sh 'apt update && apt install -y npm'
-            }
-        }
+        
         stage('Install surge')
         {
             steps {
