@@ -20,6 +20,7 @@ pipeline {
             steps {
                 sh 'apt update && apt install -y npm'
             }
+        }
         stage('Install surge')
         {
             steps {
