@@ -3,7 +3,7 @@ pipeline {
         TOKEN = credentials('SURGE_TOKEN')
       }
     agent {
-        docker { image 'node'
+        docker { image 'node:8'
         args '-u root:root'
         }
     }
@@ -19,7 +19,7 @@ pipeline {
         stage('Install surge')
         {
             steps {
-                sh 'npm install -g surge'
+                sh 'npm install --global surge'
             }
         }
         stage('Deploy')
